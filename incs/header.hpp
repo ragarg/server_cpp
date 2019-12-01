@@ -27,6 +27,8 @@
 	const int SOCKET_ERROR = -1;
 #endif
 
+#include "iostream"
+
 #include "libft.h"
 #include "memory"
 
@@ -52,11 +54,14 @@ using std::unordered_set;
 class RoboCat;
 class GameObject;
 
-//# include "StringUtils.h"
-//# include "SocketAddress.h"
-//# include "SocketAddressFactory.h"
-//# include "UDPSocket.h"
-//# include "TCPSocket.h"
-//# include "SocketUtil.h"
+# define inMaxLength 3000
+# include "SocketAddress.hpp"
+# include "SocketAddressFactory.hpp"
+# include "UDPSocket.hpp"
+# include "TCPSocket.hpp"
+# include "SocketUtil.hpp"
+# include "Client.hpp"
+# include "Room.hpp"
+void DoTCPLoop();
 
 #endif

@@ -12,13 +12,21 @@
 
 NAME	= server
 
-SRC		= main.cpp
+SRC		= main.cpp \
+		  SocketAddress.cpp \
+		  SocketAddressFactory.cpp \
+		  SocketUtil.cpp \
+		  TCPSocket.cpp \
+		  UDPSocket.cpp \
+		  DoTCPLoop.cpp \
+		  Client.cpp \
+		  Room.cpp \
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.cpp=.o))
 
 # compiler
 CC		= g++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -std=c++11
 
 # directories
 SRCDIR	= ./srcs/
