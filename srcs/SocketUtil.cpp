@@ -41,7 +41,7 @@ void SocketUtil::ReportError( const wchar_t* inOperationDesc )
 	
 	LOG( "Error %s: %d- %s", inOperationDesc, errorNum, lpMsgBuf );
 #else
-	std::cerr << "Error: %hs" << inOperationDesc;
+	LOG( "Error: %hs", inOperationDesc);
 #endif
 }
 

@@ -21,6 +21,7 @@ SRC		= main.cpp \
 		  DoTCPLoop.cpp \
 		  Client.cpp \
 		  Room.cpp \
+		  StringUtils.cpp
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.cpp=.o))
 
