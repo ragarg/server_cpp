@@ -12,7 +12,7 @@ void DoTCPLoop()
     printf("put addr\n");
     std::getline(std::cin, s);
     SocketAddressPtr receivingAddres = addr.CreateIPv4FromString(s);
-    SocketAddressPtr Addres = addr.CreateIPv4FromString("192.168.1.225:48002");
+    SocketAddressPtr Addres = addr.CreateIPv4FromString("192.168.1.12:48002");
     printf("qwerqewr\n");
     if( listenSocket->Bind(*receivingAddres ) != NO_ERROR)
     {
