@@ -9,10 +9,12 @@ class Client
         Client(char *nickname, TCPSocketPtr socket);
         bool CheckSocket(TCPSocketPtr socket);
         bool CheckNickname();
-        void UpdateNickname(char *new_nickname);
+        void UpdateNickname(char *new_nickname, unsigned int len);
         TCPSocketPtr GetSocket() const {return (socket);}
     private:
+        friend class Room;
         char *nickname;
+        unsigned int len_nickname;
         TCPSocketPtr socket;
 };
 typedef shared_ptr<Client> ClientPtr;

@@ -16,9 +16,10 @@ bool Client::CheckSocket(TCPSocketPtr inSocket)
     return (socket == inSocket);
 }
 
-void    Client::UpdateNickname(char *new_nickname)
+void    Client::UpdateNickname(char *new_nickname, unsigned int len)
 {
-    nickname = new_nickname;
+    nickname = strdup(new_nickname);
+    len_nickname = len - 1;
 }
 
 bool    Client::CheckNickname()

@@ -72,11 +72,18 @@ int TCPSocket::Bind( const SocketAddress& inBindAddress )
 	return NO_ERROR;
 }
 
+bool TCPSocket::operator==(const TCPSocket &first)
+{
+    printf("qweqw\n");
+    return (mSocket == first.mSocket);
+}
+
 TCPSocket::~TCPSocket()
 {
 #if _WIN32
 	closesocket( mSocket );
 #else
+    shutdown(mSocket, SHUT_RDWR);
 	close( mSocket );
 #endif
 }

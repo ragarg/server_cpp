@@ -35,7 +35,21 @@ void DoTCPLoop()
                 }
                 else
                 {
-                    room.UpdateClients(socket);
+                    if (room.UpdateClients(socket) == -2)
+                    {
+                        for(int i; readBlockSockets.size() > i; i++)
+                        {
+                            printf("%d\n", i);
+                            if (*(readBlockSockets[i].get()) == *(socket.get()))
+                            {
+                                printf("ewqe\n");
+                                readBlockSockets.erase(readableSockets.begin() + i);
+                                printf("ewqe\n");
+                                //vector<TCPSocketPtr>(readBlockSockets).swap(readBlockSockets);
+                            }
+                            printf("dasda\n");
+                        }
+                    }
                 }
             }
         }
