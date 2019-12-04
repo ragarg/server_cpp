@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= server
+NAME	= client
 
 SRC		= main.cpp \
 		  SocketAddress.cpp \
@@ -19,9 +19,8 @@ SRC		= main.cpp \
 		  TCPSocket.cpp \
 		  UDPSocket.cpp \
 		  DoTCPLoop.cpp \
-		  Client.cpp \
-		  Room.cpp \
-		  StringUtils.cpp
+		  StringUtils.cpp \
+		  Connect.cpp
 
 OBJ		= $(addprefix $(OBJDIR),$(SRC:.cpp=.o))
 

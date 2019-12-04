@@ -60,9 +60,9 @@ class GameObject;
 # include "UDPSocket.hpp"
 # include "TCPSocket.hpp"
 # include "SocketUtil.hpp"
-# include "Client.hpp"
-# include "Room.hpp"
 void DoTCPLoop();
+int Connect(TCPSocketPtr socket);
+int CloseConnect(TCPSocketPtr socket);
 
 namespace StringUtils
 {

@@ -54,7 +54,7 @@ int TCPSocket::Receive(void* inData, int inLen)
     int bytesReceivedCount = recv(mSocket, static_cast<char*>(inData), inLen, 0);
     if(bytesReceivedCount < 0)
     {
-        SocketUtil::ReportError(L"TCPSocket::Receive");
+        //SocketUtil::ReportError(L"TCPSocket::Receive");
         return -SocketUtil::GetLastError();
     }
     return bytesReceivedCount;
@@ -99,6 +99,7 @@ TCPSocket::~TCPSocket()
 #if _WIN32
 	closesocket( mSocket );
 #else
+    shutdown(mSocket, SHUT_WR);
 	close( mSocket );
 #endif
 }
